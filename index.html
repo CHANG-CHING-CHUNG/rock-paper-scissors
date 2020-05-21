@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animation.css">
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+    <header class="row title title-modifier">
+        <h1 class="title-h1">ROCK PAPER SCISSORS</h1>
+    </header>
+
+    <div class="row top-bar">
+        <div class="row bg-light score-board">
+            <div class="flex-40 player pd15">
+                <p class="you">YOU</p>
+                <p class="big-font you-score">0</p>
+            </div>
+            <div class="flex-40 computer pd15">
+                <p class="ai">Robot</p>
+                <p class=" big-font ai-score">0</p>
+            </div>
+        </div>
+    </div>
+
+    <main>
+      <div class="pd30 row playboard">
+
+        <div class="flex-40 column player1">
+          <img class="img img-size ch1" src="/images/figures/one-punch.jpg" alt="saitama">
+          <div class="mt20 row pt15">
+            <a class="player-rock btn btn-red mh10 text-center text-size flex-33">Rock</a>
+            <a class="player-paper btn btn-brown mh10 text-center text-size flex-33">Paper</a>
+            <a class="player-scissors btn btn-green mh10 text-center text-size flex-33">Scissors</a>
+          </div>
+        </div>
+
+        <div class="flex-40 column computer1">
+          <img class="img img-size ch2" src="/images/figures/boros.png" alt="boros">
+          <div class="mt20 row pt15">
+            <a class="ai-rock btn-ai btn-red mh10 text-center text-size flex-33">Rock</a>
+            <a class="ai-paper btn-ai btn-brown mh10 text-center text-size flex-33">Paper</a>
+            <a class="ai-scissors btn-ai btn-green mh10 text-center text-size flex-33">Scissors</a>
+          </div>
+        </div>
+
+      </div>
+      <a class="restart">Restart</a>
+
+      <div class="animation-box">
+        <div class="animation-atk-player">
+        </div>
+        <div class="animation-atk-ai">
+        </div>
+    </div>
+    </main>
+    
+    <script src="/JS/jquery-3.5.1.min.js"></script>
+    <script src="/JS/game.js"></script>
+</body>
+</html>

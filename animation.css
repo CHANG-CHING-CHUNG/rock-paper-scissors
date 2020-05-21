@@ -1,0 +1,62 @@
+
+.animation-box {
+  padding: 15px;
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.display {
+  display: flex;
+}
+
+.animation-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.animation-atk-player {
+  background-image: url("./images/atk/saitama.png");
+  max-width: 498px;
+  width:100%;
+  min-height: 280px;
+  z-index: 1;
+  display: none;
+}
+
+.animation-atk-ai {
+  background-image: url("./images/atk/boros.png");
+  max-width: 498px;
+  width:100%;
+  min-height: 280px;
+  z-index: 1;
+  display: none;
+}
+
+.atk--active1 {
+  display: block;
+  animation:  animation 4s steps(66) 1;
+}
+
+.atk--active2 {
+  display: block;
+  animation:  animation2 3s steps(27) 1;
+}
+
+@keyframes animation {
+  100% {background-position:-32868px;}
+}
+@keyframes animation2 {
+  100% {background-position:-13446px;}
+}
