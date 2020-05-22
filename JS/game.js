@@ -92,22 +92,29 @@ class View {
   showAnimation(youWin) {
     if(youWin && youWin !== "tie") {
       this.animBox.addClass('display')
-      setTimeout(() => {this.youAnim.addClass('atk--active1')}, 500);
+
+      setTimeout(() => {
+        this.youAnim.addClass('atk--active1');
+          GameController.playsound(youWin);  
+      }, 500);
 
       setTimeout(() => {
         this.animBox.removeClass('display');
         this.youAnim.removeClass('atk--active1');
         this.showScore();
-      },4500);
+      },6500);
     } else if(youWin === false && youWin !== 'tie'){
       this.animBox.addClass('display')
-      setTimeout(() => {this.aiAnim.addClass('atk--active2')}, 500);
+      setTimeout(() => {
+        this.aiAnim.addClass('atk--active2');
+        GameController.playsound(youWin);  
+      }, 500);
 
       setTimeout(() => {
         this.animBox.removeClass('display');
         this.aiAnim.removeClass('atk--active2');
         this.showScore();
-      },3500);
+      },4000);
     }
   }
 }
@@ -141,7 +148,6 @@ class GameControl{
   
   selectAct(e) {
     const act = $(e.target);
-    this.removeSelect();
     if(act.hasClass('player-rock')) {
       act.addClass('selected');
       GameStart.game('rock')
@@ -179,6 +185,10 @@ class GameControl{
 
       GameView.showScore(GameStart.playerScore, GameStart.computerScore);
     }
+
+    setTimeout(() => {
+      this.removeSelect();
+    },1500);
     
   }
 
@@ -189,6 +199,17 @@ class GameControl{
     this.aiRock.removeClass('selected');
     this.aiPaper.removeClass('selected');
     this.aiScissors.removeClass('selected');
+  }
+
+  playsound(youWin) {
+    const youAudio = new Audio('./sounds/saitama-atk.mp3');
+    const aiAudio = new Audio('./sounds/boros-atk.mp3');
+
+    if(youWin && youWin !== "tie") {
+      youAudio.play();
+    } else if(youWin === false && youWin !== 'tie') {
+      aiAudio.play();
+    }
   }
 }
 

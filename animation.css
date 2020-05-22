@@ -46,12 +46,12 @@
 
 .atk--active1 {
   display: block;
-  animation:  animation 4s steps(66) 1;
+  animation:  animation 6.5s steps(66) 1;
 }
 
 .atk--active2 {
   display: block;
-  animation:  animation2 3s steps(27) 1;
+  animation:  animation2 4s steps(27) 1;
 }
 
 @keyframes animation {
